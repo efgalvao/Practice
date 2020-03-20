@@ -5,16 +5,27 @@ Each character in S is a type of stone you have.  You want to know how many of t
 The letters in J are guaranteed distinct, and all characters in J and S are letters.
 Letters are case sensitive, so "a" is considered a different type of stone from "A".
 
-    >>>J = "aA", S = "aAAbbbb"
+    >>> # Testing
+    >>> J = "aA"
+    >>> S = "aAAbbbb"
+    >>> numJewelsInStones(J, S)
     3
-    >>>J = "z", S = "ZZ"
+    >>> J = "z"
+    >>> S = "ZZ"
+    >>> numJewelsInStones(J, S)
     0
 
 """
-def numJewelsInStones(self, J, S):
+def numJewelsInStones(J, S):
     """
     :type J: str
     :type S: str
     :rtype: int
     """
+    count = 0
+    for j in J:
+        for s in S:
+            if j == s:
+                 count +=1
 
+    return count
