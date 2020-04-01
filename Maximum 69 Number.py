@@ -3,26 +3,43 @@ Given a positive integer num consisting only of digits 6 and 9.
 
 Return the maximum number you can get by changing at most one digit (6 becomes 9, and 9 becomes 6).
 
-Example 1:
-
-Input: num = 9669
-Output: 9969
-Explanation:
-Changing the first digit results in 6669.
-Changing the second digit results in 9969.
-Changing the third digit results in 9699.
-Changing the fourth digit results in 9666.
-The maximum number is 9969.
-
-Example 2:
-
-Input: num = 9996
-Output: 9999
-Explanation: Changing the last digit 6 to 9 results in the maximum number.
-
-Example 3:
-
-Input: num = 9999
-Output: 9999
-Explanation: It is better not to apply any change.
+    >>> num = 9669
+    >>> Solution.maximum69(num)
+    9969
+    >>> num = 9996
+    >>> Solution.maximum69(num)
+    9999
+    >>> num = 9999
+    >>> Solution.maximum69(num)
+    9999
 """
+
+
+class Solution(object):
+    def maximum69(num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        result = num
+        num_l = list(map(int, str(num)))
+        num_o = num_l.copy()
+        l = len(num_l)
+        for i in range(l):
+            num_l = num_o.copy()
+            num_l = list(num_l)
+            if num_l[i] == 6:
+                num_l[i] = 9
+                num_l = [str(integer) for integer in num_l]
+                num_i = int("".join(num_l))
+                if num_i > result:
+                    result = num_i
+
+            else:
+                num_l[i] = 6
+                num_l = [str(integer) for integer in num_l]
+                num_i = int("".join(num_l))
+                if num_i > result:
+                    result = num_i
+
+        return result
