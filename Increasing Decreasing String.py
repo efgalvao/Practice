@@ -15,35 +15,61 @@ Return the result string after sorting s with this algorithm.
 
 
 
-Example 1:
+>>> s = "aaaabbbbcccc"
+>>> Solution.sortString(s)
+'abccbaabccba'
 
-Input: s = "aaaabbbbcccc"
-Output: "abccbaabccba"
-Explanation: After steps 1, 2 and 3 of the first iteration, result = "abc"
-After steps 4, 5 and 6 of the first iteration, result = "abccba"
-First iteration is done. Now s = "aabbcc" and we go back to step 1
-After steps 1, 2 and 3 of the second iteration, result = "abccbaabc"
-After steps 4, 5 and 6 of the second iteration, result = "abccbaabccba"
+>>> s = "rat"
+>>> Solution.sortString(s)
+'art'
 
-Example 2:
+>>> s = "leetcode"
+>>> Solution.sortString(s)
+'cdelotee'
 
-Input: s = "rat"
-Output: "art"
-Explanation: The word "rat" becomes "art" after re-ordering it with the mentioned algorithm.
+>>> s = "ggggggg"
+>>> Solution.sortString(s)
+'ggggggg'
 
-Example 3:
-
-Input: s = "leetcode"
-Output: "cdelotee"
-
-Example 4:
-
-Input: s = "ggggggg"
-Output: "ggggggg"
-
-Example 5:
-
-Input: s = "spo"
-Output: "ops"
+>>> s = "spo"
+>>> Solution.sortString(s)
+'ops'
 
 """
+import string
+
+
+class Solution(object):
+    def sortString(s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        out = list()
+        z = 0
+        qtd = 1
+        inverso = string.ascii_lowercase[::-1]
+        for k in string.ascii_lowercase:
+            qtdl = s.count(k)
+            while qtdl > 0:
+                for i in string.ascii_lowercase:
+                    qtd = s.count(i) - z
+                    if qtd > 0 and i in s:
+                        out.append(i)
+                        qtd -= 1
+                z += 1
+                qtdl -= 1
+                for l in inverso:
+                    qtd = s.count(l) - z
+                    if qtd > 0 and l in s:
+                        out.append(l)
+                        qtd -= 1
+                z += 1
+                qtdl -= 1
+
+        out = (''.join(out))
+        return out
+
+Output: "cdelotee"
+s = "aaaabbbbcccc"
+print(Solution.sortString(s))
