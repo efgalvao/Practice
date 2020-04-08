@@ -11,3 +11,35 @@ def oddCells(n, m, indices):
     :type indices: List[List[int]]
     :rtype: int
     """
+    row = list()
+    col = list()
+    matriz = []
+    linha = []
+    out = 0
+
+    while len(matriz) != n:
+        linha.append(0)
+        if len(linha) == m:
+            matriz.append(linha)
+            linha = []
+
+    for i in range(len(indices)):
+        x = indices[i][0]
+        t = 0
+        while t < len(matriz[0]):
+            matriz[x][t] += 1
+            t += 1
+
+    for i in range(len(indices)):
+        x = indices[i][1]
+        t = 0
+        while t < len(matriz):
+            matriz[t][x] += 1
+            t += 1
+
+    for x in matriz:
+        for z in x:
+            if z % 2 != 0:
+                out += 1
+
+    return out
