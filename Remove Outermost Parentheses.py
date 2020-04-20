@@ -9,14 +9,37 @@ Return S after removing the outermost parentheses of every primitive string in t
 
 >>> S = "(()())(())"
 >>> removeOuterParentheses(S)
-"()()()"
+'()()()'
 
 >>> S = "(()())(())(()(()))"
 >>> removeOuterParentheses(S)
-"()()()()(())"
+'()()()()(())'
 
 >>> S = "()()"
 >>> removeOuterParentheses(S)
-""
+''
 
 """
+def removeOuterParentheses(S: str) -> str:
+    left = 0
+    right = 0
+    sl = list(S)
+    for i in range((len(S)-1), 0, -1):
+        if S[i] == '(':
+            left += 1
+            if left == 2 and S[i] == last:
+                sl.pop(i)
+                left -= 2
+
+        else:
+            right += 1
+            if right == 2 and S[i] == last:
+                sl.pop(i)
+                right -= 2
+
+        last = S[i]
+    return ''.join(sl)
+
+ent = "(()())(())(()(()))"
+Output: "()()()()(())"
+print(removeOuterParentheses(ent))
