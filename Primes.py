@@ -20,3 +20,4 @@ def primos(n):
             primos += 1
     return primos
 
+print(primos(10000))
