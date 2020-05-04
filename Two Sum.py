@@ -3,11 +3,11 @@ Given an array of integers, return indices of the two numbers such that they add
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
->>> nums = [2, 7, 11, 15]
->>> target = 9
+>> nums = [2, 7, 11, 15]
+>> target = 9
 [0, 1]
->>> nums = [3, 3]
->>> target = 6
+>> nums = [3, 3]
+>> target = 6
 [0, 1]
 
 """
