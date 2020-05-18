@@ -1,1 +1,1 @@
-# Repositório com resoluções de problemas utilizando Python.
+# Repositório com resoluções de problemas.
