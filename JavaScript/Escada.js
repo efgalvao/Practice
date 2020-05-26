@@ -21,7 +21,15 @@ var escada5 = [
  "#####"
 ]
 */
-
 function escada(n){
-    
+    var escada = []
+    var vazio = " "
+    var degraus = "#"
+    for(var i = 1; i <= n; i++){
+        var degrau = (vazio.repeat(n-i)) + (degraus.repeat(i))
+        escada.push(degrau)
+    }
+    return escada
 }
+
+console.log(escada2(4))
