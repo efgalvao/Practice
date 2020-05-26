@@ -16,4 +16,17 @@ Alguns exemplos:
     si N = 3, sua altura será de 6 metros (dobrou a altura na primavera seguinte)
     E assim ...
     */
-   
+
+    function alturaArvoreUtopica(n){
+        var tamanho = 1
+        for (let i = 1; i <= n; i++) {
+            if (i % 2 != 0) {
+                tamanho *= 2
+            } else if(i % 2 == 0){
+                tamanho += 1
+            }
+            
+        } return tamanho
+    }
+
+  console.log(alturaArvoreUtopica(10))
