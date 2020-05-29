@@ -30,3 +30,13 @@ Example 3:
 Input: candies = [12,1,12], extraCandies = 10
 Output: [true,false,true]
 """
+def kidsWithCandies(candies, extraCandies):
+    greatest = max(candies)
+    output = []
+    for k in candies:
+        t = k + extraCandies
+        if t >= greatest:
+            output.append(True)
+        else:
+            output.append(False)
+    return output
