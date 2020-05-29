@@ -17,7 +17,7 @@ emmiter.on('meu_evento', function(number){;
 
 emmiter.emit('meu_evento', 101)
 --------------------------------------------
-*/
+
 
 var EventEmitter = require('events')
 class Cao extends EventEmitter{
@@ -35,3 +35,11 @@ Rex.emit('Bell2')
 Rex.removeListener('Bell', Rex.latir)
 Rex.emit('Bell')
 Rex.emit('Bel2l')
+*/
+
+var fs = require('fs');
+
+fs.writeFile('myfile.txt', 'Hello World!', function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+      }); 
