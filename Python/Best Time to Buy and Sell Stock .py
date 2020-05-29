@@ -21,11 +21,20 @@ Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 """
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        low = min(prices)
-        low_i = prices.index(low)
-        if low_i == len(prices)
-            return 0
-        for p in range(low_i, len(prices))
-            
+def maxProfit(prices) -> int:
+    if len(prices) == 0:
+        return 0
+    len_p = len(prices) - 1
+    maxprofit = 0
+    lowest = prices[0]
+    highest = prices[0]
+    for p in prices:
+        pi = prices.index(p)
+        if p < lowest:
+            lowest = p
+            lowest_i = pi
+        profit = p - lowest
+        if profit > maxprofit:
+            maxprofit = profit
+    return maxprofit
+        
