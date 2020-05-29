@@ -3,8 +3,8 @@ Desafio - Árvore utópica
 
 As árvores utópicas  crescem de uma forma particular, em dois ciclos:
 
-    cada primavera dobram seu tamanho
-    cada verão crescem um metro
+    cada primavera dobram seu tamanho.
+    cada verão crescem um metro.
 
 Se Laura planta uma árvore utópica com um metro, no final do outono, qual seria sua altura depois de N ciclos?
 
