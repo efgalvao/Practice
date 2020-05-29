@@ -37,7 +37,16 @@ Example 5:
 Input: startTime = [9,8,7,6,5,4,3,2,1], endTime = [10,10,10,10,10,10,10,10,10], queryTime = 5
 Output: 5
 """
-    def busyStudent(startTime, endTime, queryTime):
-        lenght = len(startTime)
-        for t in expression_list:
-            pass
+def busyStudent(startTime, endTime, queryTime):
+    lenght = len(startTime)
+    qtd = 0
+    for t in range(lenght):
+        if startTime[t] <= queryTime and endTime[t] >= queryTime:
+            qtd +=1
+    return qtd
+
+startTime = [9,8,7,6,5,4,3,2,1]
+endTime = [10,10,10,10,10,10,10,10,10]
+queryTime = 5
+
+print(busyStudent(startTime, endTime, queryTime))
