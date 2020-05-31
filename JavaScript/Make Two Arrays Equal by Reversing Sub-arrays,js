@@ -17,3 +17,6 @@ Explanation: You can follow the next steps to convert arr to target:
 3- Reverse sub-array [4,3], arr becomes [1,2,3,4]
 There are multiple ways to convert arr to target, this is not the only way to do so.
 */
+var canBeEqual = function(target, arr) {
+    return target.length === arr.length && target.sort().every(function(value, index) { return value === arr.sort()[index]});
+};
