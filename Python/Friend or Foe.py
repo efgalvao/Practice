@@ -9,3 +9,11 @@ i.e.
 
 friend ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"]
 """
+def friend(x):
+    out = []
+    for n in x:
+        if len(n) == 4:
+            out.append(n)
+    return out
+
+print(friend(["Ryan", "Kieran", "Mark",]))
