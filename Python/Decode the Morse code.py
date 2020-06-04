@@ -15,5 +15,26 @@ decodeMorse('.... . -.--   .--- ..- -.. .')
 #should return "HEY JUDE"
 
 NOTE: For coding purposes you have to use ASCII characters . and -, not Unicode characters.
+
+def decodeMorse(morse_code):
+    # ToDo: Accept dots, dashes and spaces, return human-readable message
+    return morse_code.replace('.', MORSE_CODE['.']).replace('-', MORSE_CODE['-']).replace(' ', '')
+
 """
-MORSE_CODE['.--']
+#MORSE_CODE['.--']
+morse = {'.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E', '..-.': 'F', '--.': 'G', '....': 'H', '..': 'I', '.---': 'J', '-.-': 'K', '.-..': 'L', '--': 'M', '-.': 'N', '---': 'O', '.--.': 'P', '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T', '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X', '-.--': 'Y', '--..': 'Z', '-----': '0', '.----': '1', '..---': '2', '...--': '3', '....-': '4', '.....': '5', '-....': '6', '--...': '7', '---..': '8', '----.': '9', '.-.-.-': '.', '--..--': ',', '..--..': '?', '.----.': "'", '-.-.--': '!', '-..-.': '/', '-.--.': '(', '-.--.-': ')', '.-...': '&', '---...': ':', '-.-.-.': ';', '-...-': '=', '.-.-.': '+', '-....-': '-', '..--.-': '_', '.-..-.': '"', '...-..-': '$', '.--.-.': '@', '...---...': 'SOS'}
+def decodeMorse(morse_code):
+    morse_code = morse_code.strip(" ")
+    words = morse_code.split("   ")
+    decoded = []
+    for w in words:
+        word = w.split(' ')
+        word_s = ''
+        for letter in word:
+            word_s += MORSE_CODE[letter]
+        decoded.append(word_s)
+        decoded_s = (' '.join(decoded))
+    return decoded_s
+
+
+print(decodeMorse('.... . -.--   .--- ..- -.. .')) # 'HEY JUDE'
