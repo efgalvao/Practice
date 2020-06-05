@@ -25,3 +25,11 @@ def greet(language):
 'welsh': 'Croeso'}
     if language in wel:
         return wel[language]
+    else:
+        return wel['english']
+
+print(greet('english')) # 'Welcome'
+print(greet('dutch'))# 'Welkom'
+print(greet('IP_ADDRESS_INVALID'))# 'Welcome'
+print(greet(''))# 'Welcome'
+print(greet(2))# 'Welcome'
