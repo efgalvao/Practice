@@ -68,3 +68,22 @@ The secondary diagonal is:
 Sum across the secondary diagonal: 4 + 5 + 10 = 19
 Difference: |4 - 19| = 15
 """
+def diagonalDifference(arr):
+    times = len(arr[0])
+    x = 0
+    suml = 0
+    sumr = 0
+    while x < times:
+        suml += arr[x][x]
+        x += 1
+    x = times - 1
+    y = 0
+    while x >= 0:
+        sumr += arr[x][y]
+        x -= 1
+        y += 1
+    out = abs(suml - sumr)
+    return out
+
+arr = [[11, 2, 4], [4, 5, 6], [10, 8, -12]]
+print(diagonalDifference(arr))
