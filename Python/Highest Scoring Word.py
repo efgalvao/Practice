@@ -9,3 +9,20 @@ If two words score the same, return the word that appears earliest in the origin
 
 All letters will be lowercase and all inputs will be valid.
 """
+def high(x):
+    alphabet = {'a' : 1, 'b' : 2, 'c' : 3, 'd' : 4, 'e' : 5, 'f' : 6, 'g' : 7, 'h' : 8, 'i' : 9, 'j' : 10, 'k' : 11, 'l' : 12, 'm' : 13, 'n' : 14, 'o' : 15, 'p' : 16, 'q' : 17, 'r' : 18, 's' : 19, 't' : 20, 'u' : 21, 'v' : 22, 'w' : 23, 'x' : 24, 'y' : 25, 'z' : 26}
+    words = x.split(" ")
+    highest = ''
+    high_i = 0
+    value = 0
+    for word in words:
+        value = 0
+        for l in word:
+            value += alphabet[l]
+        if value > high_i:
+                highest = word
+                high_i = value
+    return highest
+
+
+print(high('man i need a taxi up to ubud'))
