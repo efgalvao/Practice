@@ -1,15 +1,22 @@
 def turnOffTheLights(k, c):
     len_c = len(c)
-    x = k
-    if len_c <= k:
+    if len_c <= 2 * k + 1:
         return min(c)
     soma = 0
-    while x < (len_c - 1):
-        soma += c[x]
-        x += 2 * k + 1
-        if x >= len_c and (x - k) <= len_c:
-                soma += c[-1]
-    return soma
+    minimal = 0
+    for i in range(k + 1):
+        cost = sum(c) 
+        while i < (len_c - 1):
+            soma += c[i]
+            i += 2 * k + 1
+            if i >= len_c and (i - k) <= len_c:
+                    soma += c[-1]
+        if soma < minimal:
+            minimal = soma
+
+            
+    return minimal
+
 
 
 teste = [1,1,1,1,1,1,1,1,1,1,1,1,1]
