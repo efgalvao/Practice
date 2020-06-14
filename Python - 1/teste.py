@@ -1,17 +1,16 @@
-def plusMinus(arr):
-    l = len(arr)
-    p = 0
-    n = 0
-    z = 0
-    for n in arr:
-        if n > 0:
-            p += 1
-        elif n < 0:
-            n += 1
-        else:
-            z += 1
-    print(float(p/l))
-    print(float(n/l))
-    print(float(z/l))
+from math import ceil
 
-print(plusMinus([-4, 3, -9, 0, 4, 1]))
+def gradingStudents(grades):
+    for n in grades:
+        if n < 38:
+            print(n)
+        elif (ceil(n/5)*5) - n < 3:
+            print(ceil(n/5)*5)
+        else:
+            print(n)
+    return n
+
+
+grades = [73, 67, 38, 33]
+gradingStudents(grades)
+resposta = [75, 67, 40, 33]
