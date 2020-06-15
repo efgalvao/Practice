@@ -1,16 +1,7 @@
-from math import ceil
-
-def gradingStudents(grades):
-    for n in grades:
-        if n < 38:
-            print(n)
-        elif (ceil(n/5)*5) - n < 3:
-            print(ceil(n/5)*5)
-        else:
-            print(n)
-    return n
+matrix1 = [[1, 2], [3,4], [5,6], [7,8]]
+transpose = [[row[i] for row in matrix1] for i in range(2)]
+print (transpose)
 
 
-grades = [73, 67, 38, 33]
-gradingStudents(grades)
-resposta = [75, 67, 40, 33]
+
+
