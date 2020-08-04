@@ -4,7 +4,11 @@
 
 def migratoryBirds(arr):
     types = {1:0, 2:0, 3:0, 4:0, 5:0}
-    
+    for x in arr:
+        types[x] += 1
+    y= max(types, key=lambda key: types[key])
+    return y
+
 
 
 
