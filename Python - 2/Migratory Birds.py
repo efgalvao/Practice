@@ -1,5 +1,5 @@
 """
-    https://www.hackerrank.com/challenges/migratory-birds/problem?h_r=next-challenge&h_v=zen
+    https://www.hackerrank.com/challenges/migratory-birds/
 """
 
 def migratoryBirds(arr):

@@ -1,5 +1,5 @@
 """
-https://www.hackerrank.com/challenges/extra-long-factorials/problem
+https://www.hackerrank.com/challenges/extra-long-factorials/
 """
 def extraLongFactorials(n):
     out = 1
