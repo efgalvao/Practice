@@ -53,7 +53,7 @@ class Pacient
 end
 
 print <<-STRING1, <<-STRING2
-       Concat
-       STRING1
-       enação
-       STRING2
+      Concat
+      STRING1
+      enação
+      STRING2
