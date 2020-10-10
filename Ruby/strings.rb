@@ -22,3 +22,7 @@ str = "gato no mato"
 str.sub!(/a/, "**")
 str.gsub!(/o/, "O")
 puts str
+
+teste = "ola meu querido laptop"
+teste['ola'] = "*Miau*"
+puts teste.upcase
