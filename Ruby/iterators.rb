@@ -86,3 +86,19 @@ my_while -> { a < 5 } do
   puts a
   a += 1
 end
+
+pumpkins = {
+  vocal: "Billy Corgan",
+  guitar:"James Iha",
+  bass:"D'arcy Wretzky",
+  drum:"Jimmy Chamberlin"
+} 
+
+pumpkins.each_pair do |key, value|
+  puts "#{value} plays #{key}"
+end
+
+pumpkins.each do |pair|
+  puts "Array: #{pair}"
+  puts "#{pair[1]} plays #{pair[0]}"
+end
